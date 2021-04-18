@@ -17,14 +17,14 @@ resource "docker_container" "pythontf" {
   command = ["tail", "-f" , "/dev/null"]
 }
 
-resource "docker_container" "busybox" {
-  name = "busybox"
-  image = docker_image.busybox.latest
+resource "docker_container" "tensorflow" {
+  name = "tensorflow"
+  image = docker_image.tensorflow.latest
   command = ["tail", "-f" , "/dev/null"]
 }
 
-resource "docker_image" "busybox"{
-  name = "busybox"
+resource "docker_image" "tensorflow"{
+  name = "tensorflow/tensorflow"
   keep_locally = true
 }
 
