@@ -17,6 +17,10 @@ resource "docker_container" "pythontf" {
   command = ["tail", "-f" , "/dev/null"]
 }
 
+resource "docker_image" "python" {
+  name = "python:latest"
+}
+
 resource "docker_container" "tensorflow" {
   name = "tensorflow"
   image = docker_image.tensorflow.latest
@@ -28,9 +32,26 @@ resource "docker_image" "tensorflow"{
   keep_locally = true
 }
 
-resource "docker_image" "python" {
-  name = "python:latest"
+resource "docker_container" "gitlab-ee" {
+  name = "gitlab-ee"
+  image = docker_image.gitlab-ee.latest
+  command = ["tail", "-f" , "/dev/null"]
+}
+
+resource "docker_image" "gitlab-ee"{
+  name = "gitlab/gitlab-ee"
+  keep_locally = true
 }
 
 
+resource "docker_container" "sonarqube" {
+  name = "sonarqube"
+  image = docker_image.sonarqube.latest
+  command = ["tail", "-f" , "/dev/null"]
+}
+
+resource "docker_image" "sonarqube"{
+  name = "sonarqube"
+  keep_locally = true
+}
 

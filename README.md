@@ -7,3 +7,9 @@
     - HashiCorp Terraform
     - Markdown All in One
     - Remote WSL
+    - Python extension for Visual Studio Code
+- Installed Python 3.9.4
+
+Command to install py into the python container
+Adding command to copy python module to container
+docker @("cp", "createModel.py", "$(docker ps --quiet --filter "name=python"):/creatModel.py")   
