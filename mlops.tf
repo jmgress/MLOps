@@ -35,7 +35,18 @@ resource "docker_image" "tensorflow"{
 resource "docker_container" "gitlab-ee" {
   name = "gitlab-ee"
   image = docker_image.gitlab-ee.latest
-  command = ["tail", "-f" , "/dev/null"]
+  ports {
+    internal = 22
+    external = 23
+  }
+  ports {
+    internal = 443
+    external = 444
+  }
+  ports {
+    internal = 80
+    external = 81
+  }
 }
 
 resource "docker_image" "gitlab-ee"{
@@ -47,7 +58,10 @@ resource "docker_image" "gitlab-ee"{
 resource "docker_container" "sonarqube" {
   name = "sonarqube"
   image = docker_image.sonarqube.latest
-  command = ["tail", "-f" , "/dev/null"]
+  ports {
+    internal = 9000
+    external = 9001
+  }
 }
 
 resource "docker_image" "sonarqube"{
