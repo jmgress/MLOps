@@ -69,3 +69,17 @@ resource "docker_image" "sonarqube"{
   keep_locally = true
 }
 
+resource "docker_container" "jenkins" {
+  name = "jenkins"
+  image = docker_image.jenkins.latest
+  ports {
+    internal = 8080
+    external = 82
+  }
+}
+
+resource "docker_image" "jenkins"{
+  name = "jenkins/jenkins"
+  keep_locally = true
+}
+
