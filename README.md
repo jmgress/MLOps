@@ -13,4 +13,4 @@
 - Command to install py into the python container
 
 Adding command to copy python module to container
-docker @("cp", "createModel.py", "$(docker ps --quiet --filter "name=python"):/creatModel.py")   
+docker @("cp", "createModel.py", "$(docker ps --quiet --filter "name=python"):/createModel.py")   
