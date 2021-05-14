@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+.terraform/providers/registry.terraform.io/kreuzwerker/docker/2.11.0/windows_amd64/CHANGELOG.md
+.terraform/providers/registry.terraform.io/kreuzwerker/docker/2.11.0/windows_amd64/LICENSE
+.terraform/providers/registry.terraform.io/kreuzwerker/docker/2.11.0/windows_amd64/terraform-provider-docker_v2.11.0.exe
