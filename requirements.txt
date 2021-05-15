@@ -1,0 +1,9 @@
+pandas_datareader
+numpy
+pandas
+requests
+tqdm
+pytest
+yfinance
+scikit_learn
+matplotlib
