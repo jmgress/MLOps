@@ -63,7 +63,19 @@ def build_dataset_iteratively(
         df = pd.concat([df, adj_close], axis=1)
     df.to_csv("stock.csv")
 
+def get_data():
+    SP500=pd.read_csv("SPY_index.csv")
+    return SP500
 
 if __name__ == "__main__":
     build_stock_dataset()
     build_sp500_dataset()
+    SP500 = get_data()
+    print(SP500)
+
+    Amazon = yf.Ticker("AMZN")
+    print(Amazon.history(period="max"))
+
+    df = yf.download("AMZN MSFT", start="2019-01-01", end="2020-01-01",group_by="ticker") 
+    print(df) 
+    print(df.AMZN)
